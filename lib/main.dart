@@ -58,7 +58,26 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(),
+                    Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment
+                              .bottomCenter, // 10% of the width, so there are ten blinds.
+                          colors: <Color>[
+                            Color(0xff7286f0),
+                            Color(0xff5266dc)
+                          ], // red to yellow
+                          tileMode: TileMode
+                              .repeated, // repeats the gradient over the canvas
+                        ),
+                        borderRadius: BorderRadius.circular(500),
+                        color: Colors.white,
+                      ),
+                      height: MediaQuery.of(context).size.width / 1.7,
+                      width: MediaQuery.of(context).size.width / 1.7,
+                    ),
+                    SizedBox(height: 70),
                     Text(
                       "Manage your files the best way",
                       textAlign: TextAlign.center,
@@ -88,7 +107,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 45,
                       width: MediaQuery.of(context).size.width / 3.2,
                       child: Center(
-                        child: Text("Lets's go!"),
+                        child: Text(
+                          "Lets's go!",
+                          style: TextStyle(
+                              color: Color(0xFF6e7dd1),
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     )
                   ],
