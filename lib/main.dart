@@ -89,6 +89,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontSize: 30,
                       ),
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Text(
                       "And that's a fact. filemountain was selected as the best cloud storage provider in the world!",
                       textAlign: TextAlign.center,
