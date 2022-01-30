@@ -39,22 +39,13 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0XFF7081ed),
       appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          title: Icon(Icons.ac_unit)),
+      body: Expanded(
+        child: Container(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
