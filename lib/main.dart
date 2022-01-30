@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -28,30 +29,73 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0XFF7081ed),
-      appBar: AppBar(
-          elevation: 0,
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment
+              .bottomRight, // 10% of the width, so there are ten blinds.
+          colors: <Color>[
+            Color(0xff7286f0),
+            Color(0xff5266dc)
+          ], // red to yellow
+          tileMode: TileMode.repeated, // repeats the gradient over the canvas
+        ),
+      ),
+      child: Scaffold(
           backgroundColor: Colors.transparent,
-          title: Icon(Icons.ac_unit)),
-      body: Expanded(
-        child: Container(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+          appBar: AppBar(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+              title: Icon(Icons.ac_unit)),
+          body: Container(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 60, right: 60),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(),
+                    Text(
+                      "Manage your files the best way",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                      ),
+                    ),
+                    Text(
+                      "And that's a fact. filemountain was selected as the best cloud storage provider in the world!",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white54,
+                        //fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.white,
+                      ),
+                      height: 45,
+                      width: MediaQuery.of(context).size.width / 3.2,
+                      child: Center(
+                        child: Text("Lets's go!"),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          )),
     );
   }
 }
